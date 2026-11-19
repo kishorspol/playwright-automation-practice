@@ -1,0 +1,17 @@
+
+image: mcr.microsoft.com/playwright:v1.56.1-noble
+
+pipelines:
+  default:
+    - step:
+        name: Playwright Automation Tests
+        caches:
+          - node
+        script:
+          - echo "Installing dependencies"
+          - npm ci
+          - echo "Running Playwright Tests"
+          - npx playwright test
+        artifacts:
+          - playwright-report/**
+          - test-results/**
