@@ -11,7 +11,7 @@ test('Login your application', async ({page})=>{
 })
 
 
-test.only('After Login successful message',async({page})=>{
+test('After Login successful message',async({page})=>{
   const loginPage = new LoginPage(page);
   await loginPage.doLogin()
 
