@@ -1,5 +1,5 @@
 
-image: mcr.microsoft.com/playwright:v1.56.1-noble
+image: mcr.microsoft.com/playwright:v1.65.1-noble
 
 pipelines:
   default:
@@ -10,6 +10,8 @@ pipelines:
         script:
           - echo "Installing dependencies"
           - npm ci
+          - echo "Checking Playwright version"
+          - npx playwright --version
           - echo "Running Playwright Tests"
           - npx playwright test
         artifacts:
