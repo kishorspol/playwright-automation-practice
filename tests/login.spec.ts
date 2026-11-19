@@ -11,11 +11,11 @@ test('Login your application', async ({page})=>{
 })
 
 
-test('After Login successful message ',async({page})=>{
+test.only('After Login successful message',async({page})=>{
   const loginPage = new LoginPage(page);
   await loginPage.doLogin()
 
-  const successMessage = page.getByText(/Login successful/i, {
+  const successMessage = page.getByText(/HomePage/i, {
         exact: true
     });
 
